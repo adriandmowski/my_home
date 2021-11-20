@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>{{ smart_device.name }}</h1>
+        <form method="POST">{% csrf_token %}
+            {{ form1.as_p }}
+        <button type="submit">Confirm</button>
+    </form>
+        <form method="POST">{% csrf_token %}
+            {{ form2.as_p }}
+        <button type="submit">Confirm</button>
+    </form>
+        {% if form3 %}
+            <form method="POST">{% csrf_token %}
+                {{ form3.as_p }}
+            <button type="submit">Confirm</button>
+        {% endif %}
+    </form>
+    <a href="{% url 'smart_device_detail' pk=smart_device.pk %}">Device detail.</a>
+<br>
+{% endblock %}

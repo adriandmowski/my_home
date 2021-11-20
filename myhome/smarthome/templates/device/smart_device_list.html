@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Smart devices list</h1>
+    <ol>
+        {% for smart_device in smart_devices %}
+            <li><a href="{% url 'smart_device_management' pk=smart_device.pk %}">{{ smart_device.name }}</a></li>
+        {% endfor %}
+    </ol>
+{% endblock %}

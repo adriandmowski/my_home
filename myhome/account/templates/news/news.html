@@ -1,0 +1,6 @@
+{% load dashboard_tags %}
+{% if request.user.is_authenticated %}
+    <li>{% temperature_now user_id=request.user.id %}</li>
+    <li>{% coronavirus_today user_id=request.user.id %}</li>
+{% endif %}
+

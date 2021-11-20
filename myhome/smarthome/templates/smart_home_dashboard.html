@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Panel główny Smart Home{% endblock %}
+
+{% block content %}
+    <h1>Smart Home</h1>
+    <ul class="menu">
+        My devices
+        <li><a href="{% url 'devices' %}">Devices</a><br></li>
+        <li><a href="{% url 'device_create' %}">Add device</a><br></li>
+    </ul>
+    <ul class="menu">
+        My smart devices
+        <li><a href="{% url 'smart_devices' %}">Smart devices</a><br></li>
+        <li><a href="{% url 'smart_device_create' %}">Add smart device</a><br></li>
+    </ul>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if error == "offline" %}
+        {{ smart_device.name }} is temporary unavailable. Click
+        <a href="{% url 'smart_device_management' pk=smart_device.pk %}">here</a>
+        to try again.
+    {% elif error == "socket_error" %}
+        There is a connection problem to the smart device: {{ smart_device.name }}. Click
+        <a href="{% url 'smart_device_management' pk=smart_device.pk %}">here</a>
+        to try again.
+    {% endif %}
+    <h1>{{ smart_device.name }}</h1>
+    <tr>
+    {% if smart_device.smart_software == 'yeelight_bulb' %}
+        <ul>
+            {% for key, value in bulb_properties.items %}
+                <li>{{key}} : {{value}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    </tr>
+    <ul>
+        <li>Producer: {{ smart_device.producer }}</li>
+        <li>Model: {{ smart_device.model }}</li>
+        <li>Type: {{ smart_device.type }}</li>
+        <li>Smart software: {{ smart_device.smart_software }}</li>
+        <li>Location: {{ smart_device.location }}</li>
+        <li>Network status: {{ smart_device.network_status }}</li>
+        <li>Power status: {{ smart_device.power_status }}</li>
+        <li>IP address: {{ smart_device.ip_address }}</li>
+        <li>Date of register: {{ smart_device.date_of_register }}</li>
+        <li>Date of purchase: {{ smart_device.date_of_purchase }}</li>
+    </ul>
+<br>
+{% endblock %}

@@ -1,0 +1,6 @@
+{% load dashboard_tags %}
+{% if profile.zip_code and profile.country_code and profile.open_weather_map_appi_id %}
+    Current temperature: {{ temperature }}&#8451
+{% else %}
+    To see weather news, complete your profile in Django administration panel.
+{% endif %}

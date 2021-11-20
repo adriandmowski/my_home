@@ -1,0 +1,9 @@
+{% if profile.country %}
+    {% if cases_today != None %}
+        COVID-19 cases today in {{ my_country }}: {{ cases_today }}
+    {% else %}
+        There is no data on today's COVID-19 cases in {{ my_country }} yet.
+    {% endif %}
+{% else %}
+    To see COVID-19 news, complete your profile in Django administration panel.
+{% endif %}

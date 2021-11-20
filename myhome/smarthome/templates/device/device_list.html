@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Devices list</h1>
+    <ol>
+        {% for device in devices %}
+            <li><a href="{% url 'device_detail' pk=device.pk %}">{{ device.name }}</a></li>
+        {% endfor %}
+    </ol>
+
+{% endblock %}

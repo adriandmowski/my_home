@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>{{ device.name }}</h1>
+    <li>Producer: {{ device.producer }}</li>
+    <li>Model: {{ device.model }}</li>
+    <li>Type: {{ device.type }}</li>
+    <li>Location {{ device.location }}</li>
+    <li>Date of register: {{ device.date_of_register }}</li>
+    <li>Date of purchase: {{ device.date_of_purchase }}</li>
+{% endblock %}
